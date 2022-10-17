@@ -27,11 +27,3 @@ proc newMesh*(geom:GeometryObj; material:MeshBasicMaterialObj): SceneObj {. impo
 proc appendRenderer*(renderer:WebGLRendererObj) {. importcpp: "document.body.appendChild(#.domElement )" .}
 
 proc `+=`*(this:JsObject;val:float):JsObject {.importcpp:"(# += #)",discardable.}
-#[
-proc tabulator*(element:cstring, options:JsObject): Tabulator {. importcpp: "new Tabulator(@)" .}
-
-proc setData*(this:Tabulator, a:openArray[JsObject]):Tabulator {.importcpp:"#.setData(@)", discardable.}
-
-proc setData*(this:Tabulator, a:JsObject):Tabulator {.importcpp:"#.setData(@)", discardable.}
-
-]#
